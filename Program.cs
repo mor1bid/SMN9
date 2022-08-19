@@ -35,7 +35,7 @@ Console.WriteLine("67. Введите число:");
 int n = Convert.ToInt32(Console.ReadLine());
 int num = n;
 int sum = 0;
-while(num>0)
+while(num!=0)
 {
     num%=10;
     sum+=num;
