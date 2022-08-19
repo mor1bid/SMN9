@@ -29,11 +29,11 @@ void Z3()
 Console.WriteLine("67. Введите число:");
 int num = Convert.ToInt32(Console.ReadLine());
 int sum = 0;
-string Rec(int a, int b )
+string Rec(int a)
 {
-    if(a<=b) return $"{a}" + Rec(a+1, b);
+    if(num<=0) return $"{a}" + Rec(a+1);
     else return String.Empty;
 }
-Console.WriteLine(Rec(sum+=num%10,num));
+Console.WriteLine(Rec(sum+=num%10));
 }
 Z3();
