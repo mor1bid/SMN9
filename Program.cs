@@ -32,13 +32,20 @@ Console.WriteLine(Rec(m,n));
 void Z3() 
 {
 Console.WriteLine("67. Введите число:");
-int num = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
+int num = n;
 int sum = 0;
-string Rec(int num, int co) 
+while(num>0)
 {
-    if(num>0) return $"{sum} "+ Rec(sum+(num%10), co);
-    else return string.Empty;
+    num%=10;
+    sum+=num;
 }
-Console.WriteLine(Rec(sum, 0));
+Console.WriteLine(n + " = " + sum);
+// string Rec(int num, int co) 
+// {
+//     if(num>0) return $"{sum} "+ Rec(sum+(num%10), co);
+//     else return string.Empty;
+// }
+// Console.WriteLine(Rec(sum, 0));
 }
 Z3();
