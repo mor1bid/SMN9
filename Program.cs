@@ -31,21 +31,24 @@ Console.WriteLine(Rec(m,n));
 
 void Z3() 
 {
-Console.WriteLine("67. Введите число:");
-int n = Convert.ToInt32(Console.ReadLine());
-int num = n;
-int sum = 0;
-while(num!=0)
+Console.WriteLine("67. Введите первое число:");
+int numa = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе число: ");
+int numb = Convert.ToInt32(Console.ReadLine());
+int co = numb;
+int Rec(int co, int numb) 
 {
-    num%=10;
-    sum+=num;
+    while(co>=numa) 
+    {
+        co--;
+        if (co % 3 ==0) 
+        {
+            Console.Write(co + " ");
+            return Rec(co,numb);
+        }
+        return co;
+    }
 }
-Console.WriteLine(n + " = " + sum);
-// string Rec(int num, int co) 
-// {
-//     if(num>0) return $"{sum} "+ Rec(sum+(num%10), co);
-//     else return string.Empty;
-// }
-// Console.WriteLine(Rec(sum, 0));
+//Console.WriteLine(Rec(co,numb));
 }
 Z3();
