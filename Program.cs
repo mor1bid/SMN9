@@ -11,16 +11,15 @@ Console.WriteLine(Rec(1,10));
 
 void Z1() 
 {
-Console.WriteLine("Введите число:");
+Console.WriteLine("63.-65. Введите первое число:");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число:");
 int n = Convert.ToInt32(Console.ReadLine());
 string Rec(int a, int b )
 {
-    Console.WriteLine("");
-    if(a<=b) 
-    { 
-        return $"{a}" + Rec(a+1, b); }
+    if(a<=b) return $"{a}" + Rec(a+1, b);
     else return String.Empty;
 }
-Console.WriteLine(Rec(1,n));
+Console.WriteLine(Rec(m,n));
 }
 Z1();
