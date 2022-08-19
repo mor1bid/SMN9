@@ -37,6 +37,7 @@ int Rec(int numa, int numb)
 }
 Console.WriteLine(numa + " в степени " + numb + " = " + Rec(numa,numb));
 }
+Console.WriteLine(" ");
 //Z4();
 
 void DZ1() 
@@ -45,6 +46,7 @@ Console.WriteLine("64. Введите первое число:");
 int numa = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" ");
 int co = numb;
 int Rec(int co, int numb) 
 {
@@ -70,16 +72,18 @@ Console.WriteLine("66. Введите первое число:");
 int numa = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
-int Rec(int co, int numb, int sum = 0) 
+int Rec(int numb, int sum = 0) 
 {
-    while(co>numa) 
+    while(numb>numa+1) 
     {
-        co--;
-        sum+=co;
-        return Rec(co,sum);
+        numb--;
+        Console.Write(numb + " + ");
+        sum+=numb;
+        return Rec(numb,sum);
     }
     return sum;
 }
-Console.WriteLine(Rec(numb, 0));
+Console.Write("=" + Rec(numb));
 }
+Console.WriteLine(" ");
 DZ2();
