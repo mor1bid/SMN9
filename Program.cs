@@ -45,29 +45,30 @@ Console.WriteLine(" ");
 
 void DZ3() 
 {
-//Console.WriteLine("66. Введите первое число:");
-int numa = 3;
-//Console.WriteLine("Введите второе число: ");
-int numb = 2;
-double A(double numa, double numb, double res = 0) 
+Console.WriteLine("66. Введите первое число:");
+int numa = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+int numb = Convert.ToInt32(Console.ReadLine());
+double A(double numa, double numb) 
 {
     if(numa==0) 
     {
         numb +=1;
         return numb;
     }
-    else if (numb==0)
+    if (numa > 0 && numb==0)
     {
         numa = (A(numa-1, 1));
         return numa; 
     }
-    else 
+    if (numa>0 && numb>0) 
     { 
         numa = A(numa-1,A(numa,numb-1)); 
         return numa; 
     }
+    return A(numa,numb);
 }
-Console.WriteLine("A(" + numa + "," + numb + ") =");
+Console.Write("A(" + numa + "," + numb + ") = ");
 Console.Write(A(numa,numb));
 }
 Console.WriteLine(" ");
