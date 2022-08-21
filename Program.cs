@@ -49,27 +49,25 @@ void DZ3()
 int numa = 3;
 //Console.WriteLine("Введите второе число: ");
 int numb = 2;
-//int res = 0;
 double A(double numa, double numb, double res = 0) 
 {
-    if(numa>0) 
+    if(numa==0) 
     {
         numb +=1;
         return numb;
     }
-    if (numb>0)
+    else if (numb==0)
     {
-        //numa = Math.Pow(numa-1, 1);
-        res = A(numa-1, 1);
-        return A(numa,res); 
+        numa = (A(numa-1, 1));
+        return numa; 
     }
     else 
     { 
-        res = A(numa-1,A(numa,numb-1)); 
-        return A(numa,numb,res); 
+        numa = A(numa-1,A(numa,numb-1)); 
+        return numa; 
     }
-    //return res;
 }
+Console.WriteLine("A(" + numa + "," + numb + ") =");
 Console.Write(A(numa,numb));
 }
 Console.WriteLine(" ");
