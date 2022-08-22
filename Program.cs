@@ -19,10 +19,10 @@ string Rec(int co)
         if (numa<numb) co++;
         else if (numa>numb) co--;
     }
-    if (co%nummlt!=0) Console.WriteLine("В данном промежутке нет чисел, кратных числу " + nummlt + "!");
     return $"{co}";
 }
-Console.WriteLine(Rec(co));
+if ((co-1)%nummlt!=0 && co!=numa) Console.WriteLine("В данном промежутке нет чисел, кратных числу " + nummlt + "!");
+else Console.WriteLine(Rec(co));
 }
 Console.WriteLine(" ");
 
@@ -34,7 +34,7 @@ Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
 string Rec(int numb, int sum = 0) 
 {
-    while(numb>numa+1 || numa>numb+1)  
+    while(numb>numa || numa>numb)  
     {
         if (numa<numb) numa++;
         else if (numa>numb) numa--;
