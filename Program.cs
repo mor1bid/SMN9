@@ -4,19 +4,20 @@ Console.WriteLine("64. Введите 1-е число:");
 int numa = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
-int co = numb;
+int co = numa;
 Console.WriteLine("Числа, лежащие в заданном промежутке: ");
 string Rec(int co, int numb) 
 {
-    while(co>numa) 
+    while(co<numb || co>numb) 
     {
-        co--;
-        if (co % 3 ==0 && co!=numa) 
+        if (co%3==0) 
         {
             Console.Write(co + "\t");
-            return Rec(co,numb);
         }
+        if (numa<numb) co++;
+        else if (numa>numb) co--;
     }
+    if (co%3!=0) Console.WriteLine("В данном промежутке нет чисел, кратных числу 3!");
     return $"{co}";
 }
 Console.WriteLine(Rec(co,numb));
@@ -31,27 +32,13 @@ Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
 string Rec(int numb, int sum = 0) 
 {
-    if (numa<numb)
+    while(numb>numa+1 || numa>numb+1)  
     {
-        while(numb>numa+1) 
-        {
-            numb--;
-            Console.Write(numb + " + ");
-            sum+=numb;
-            return Rec(numb,sum);
-        }
+        if (numa<numb) numa++;
+        else if (numa>numb) numa--;
+        Console.Write(numa + " + ");
+        sum+=numa;
     }
-    if (numa>numb)
-    {
-        while(numa>numb+1) 
-        {
-            numb++;
-            Console.Write(numb + " + ");
-            sum+=numb;
-            return Rec(numb,sum);
-        }
-        //Console.WriteLine("Заданы некорректные значения границ.");
-    } 
     return $"{sum}";
 }
 Console.Write("\b\b= " + Rec(numb));
