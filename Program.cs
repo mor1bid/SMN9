@@ -10,7 +10,7 @@ int co = numa;
 Console.WriteLine("Числа, лежащие в заданном промежутке и кратные числу " + nummlt + ": ");
 string Rec(int co) 
 {
-    while(co<numb || co>numb) 
+    if(co<numb || co>numb) 
     {
         if (co%nummlt==0) 
         {
@@ -18,9 +18,19 @@ string Rec(int co)
         }
         if (numa<numb) co++;
         else if (numa>numb) co--;
+        return Rec(co);
     }
-    if (co%nummlt!=0 && co!=numa) Console.WriteLine("В данном промежутке нет чисел, кратных числу " + nummlt + "!");
-    return $"{co}";
+    else if (numb%nummlt==0) 
+    { 
+        Console.Write(numb + "\t");;
+        return String.Empty;
+    }
+    else if (numa%nummlt==0) 
+    {
+        Console.Write(numa + "\t");;
+        return String.Empty;
+    }
+    else return String.Empty;
 }
 Console.WriteLine(Rec(co));
 }
@@ -34,16 +44,20 @@ Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
 string Rec(int numa, int sum = 0) 
 {
-    while(numb>numa || numa>numb)  
+    if(numb>numa || numa>numb)  
     {
         Console.Write(numa + " + ");
         sum+=numa;
         if (numa<numb) numa++;
         else if (numa>numb) numa--;
+        return Rec(numa,sum);
     }
-    Console.Write(numa + " + ");
-    sum+=numa;
-    return $"{sum}";
+    else
+    {
+        Console.Write(numa + " + ");
+        sum+=numa;
+        return $"{sum}";
+    }
 }
 Console.Write("\b\b= " + Rec(numa));
 }
