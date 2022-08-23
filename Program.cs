@@ -6,7 +6,6 @@ Console.WriteLine("Введите 1-е число:");
 int numa = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
-//int co = numa;
 Console.WriteLine("Числа, лежащие в заданном промежутке и кратные числу " + nummlt + ": ");
 string Rec(int numa) 
 {
