@@ -20,16 +20,6 @@ string Rec(int co)
         else if (numa>numb) co--;
         return Rec(co);
     }
-    else if (numb%nummlt==0) 
-    { 
-        Console.Write(numb + "\t");;
-        return String.Empty;
-    }
-    else if (numa%nummlt==0) 
-    {
-        Console.Write(numa + "\t");;
-        return String.Empty;
-    }
     else return String.Empty;
 }
 Console.WriteLine(Rec(co));
