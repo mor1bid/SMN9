@@ -6,23 +6,28 @@ Console.WriteLine("Введите 1-е число:");
 int numa = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите 2-е число: ");
 int numb = Convert.ToInt32(Console.ReadLine());
-int co = numa;
+//int co = numa;
 Console.WriteLine("Числа, лежащие в заданном промежутке и кратные числу " + nummlt + ": ");
-string Rec(int co) 
+string Rec(int numa) 
 {
-    if(co<numb || co>numb) 
+    if(numa<numb || numa>numb) 
     {
-        if (co%nummlt==0) 
+        if (numa%nummlt==0) 
         {
-            Console.Write(co + "\t");
+            Console.Write(numa + "\t");
         }
-        if (numa<numb) co++;
-        else if (numa>numb) co--;
-        return Rec(co);
+        if (numa<numb) numa++;
+        else if (numa>numb) numa--;
+        return Rec(numa);
+    }
+    else if (numa%nummlt==0) 
+    {
+        Console.Write(numa + "\t");;
+        return String.Empty;
     }
     else return String.Empty;
 }
-Console.WriteLine(Rec(co));
+Console.WriteLine(Rec(numa));
 }
 Console.WriteLine(" ");
 
